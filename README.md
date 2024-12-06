@@ -41,7 +41,7 @@ The Movie Recommendation System is a robust and engaging application that aims t
 - **Deployment:** Docker for containerization and Heroku or AWS for cloud deployment
 
 ## Dataset
-The Movie Recommendation System uses the [MovieLens dataset](https://grouplens.org/datasets/movielens/) and The Movie Database (TMDb) API, providing a rich collection of movie ratings, genres, and user reviews. The dataset includes:
+The Movie Recommendation System uses The Movie Database (TMDb) API, providing a rich collection of movie ratings, genres, and user reviews. The dataset includes:
 - Movie titles
 - Genres
 - User ratings
