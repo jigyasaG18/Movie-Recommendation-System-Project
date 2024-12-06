@@ -23,8 +23,7 @@ def recommend(movie):
 
     return recommended_movie_names,recommended_movie_posters
 
-movies = pickle.load(open('movies.pkl', 'rb'))
-poster_paths = pickle.load(open('poster_paths.pkl', 'rb'))
+
 file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'
 url = f'https://drive.google.com/uc?id={file_id}'
 output = 'similarity.pkl'
