@@ -48,3 +48,7 @@ if st.button('Show Recommendation'):
             else:
                 st.text(recommended_movie_names[i])
                 st.text("Poster not available")  # Handle missing poster gracefully
+
+# Hardcoded Google Drive link
+google_drive_link = "https://drive.google.com/file/d/1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP/view?usp=sharing"
+st.markdown(f"Access the file via this [Google Drive link]({google_drive_link})")
