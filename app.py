@@ -24,14 +24,9 @@ def recommend(movie):
     return recommended_movie_names,recommended_movie_posters
 
 
-file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'
-url = f'https://drive.google.com/uc?id={file_id}'
-output = 'similarity.pkl'
-similarity = pickle.load(open('similarity.pkl', 'rb'))
-
 st.header('Movie Recommender System')
-movies = pickle.load(open('movie_list.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
+movies = pickle.load(open('model/movie_list.pkl','rb'))
+similarity = pickle.load(open('model/similarity.pkl','rb'))
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
