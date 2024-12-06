@@ -24,10 +24,16 @@ def recommend(movie):
         recommended_movie_names.append(movies.iloc[i[0]].title)
 
     return recommended_movie_names, recommended_movie_posters
+    
+# Google Drive URL construction
+file_id = '16024UD_dq0LGflNidjagEInDWL-SjZjS/view?usp=drive_link'
+actual_id = file_id.split('/')[0]  # Extract the actual ID
+share_url = f'https://drive.google.com/file/d/{actual_id}/view?usp=sharing'  # Construct the sharing URL
+print(share_url)  # You can print it for debugging, or handle it as needed
 
 st.header('Movie Recommender System')
-movies = pickle.load(open('movie_list.pkl','rb'))
-similarity = pickle.load(open('similarity.pkl','rb'))
+movies = pickle.load(open('movie_list.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
@@ -49,6 +55,6 @@ if st.button('Show Recommendation'):
                 st.text(recommended_movie_names[i])
                 st.text("Poster not available")  # Handle missing poster gracefully
 
-# Hardcoded Google Drive link
+# Updated Google Drive link
 google_drive_link = "https://drive.google.com/file/d/1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP/view?usp=sharing"
 st.markdown(f"Access the file via this [Google Drive link]({google_drive_link})")
