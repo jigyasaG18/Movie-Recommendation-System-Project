@@ -26,11 +26,9 @@ def recommend(movie):
     return recommended_movie_names, recommended_movie_posters
     
 # Google Drive URL construction
-file_id = '16024UD_dq0LGflNidjagEInDWL-SjZjS/view?usp=drive_link'
-actual_id = file_id.split('/')[0]  # Extract the actual ID
-share_url = f'https://drive.google.com/file/d/{actual_id}/view?usp=sharing'  # Construct the sharing URL
+file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'  # Updated file ID for the new link
+share_url = f'https://drive.google.com/file/d/{file_id}/view?usp=sharing'  # Construct the sharing URL
 print(share_url)  # You can print it for debugging, or handle it as needed
-
 st.header('Movie Recommender System')
 movies = pickle.load(open('movie_list.pkl', 'rb'))
 similarity = pickle.load(open('similarity.pkl', 'rb'))
