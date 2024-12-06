@@ -26,7 +26,8 @@ def recommend(movie):
     return recommended_movie_names, recommended_movie_posters
 
 def download_file_from_google_drive(file_id, destination):
-    URL = f"https://drive.google.com/uc?id={file_id}"
+    file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'  # Updated file ID
+share_url = f'https://drive.google.com/file/d/{file_id}/view?usp=sharing'  # Construct the sharing URL
     response = requests.get(URL)
     with open(destination, 'wb') as f:
         f.write(response.content)
@@ -34,10 +35,10 @@ def download_file_from_google_drive(file_id, destination):
 st.header('Movie Recommender System')
 
 # Load movie list
-if not os.path.exists('model/movie_list.pkl'):
+if not os.path.exists('movie_list.pkl'):
     st.error("The movie_list.pkl file was not found. Please ensure it is in the correct directory.")
 else:
-    movies = pickle.load(open('model/movie_list.pkl', 'rb'))
+    movies = pickle.load(open('movie_list.pkl', 'rb'))
 
 # Download and load the similarity matrix
 similarity_file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'  # Google Drive file ID
