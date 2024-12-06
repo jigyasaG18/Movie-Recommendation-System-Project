@@ -27,7 +27,6 @@ def recommend(movie):
 file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'
 url = f'https://drive.google.com/uc?id={file_id}'
 output = 'similarity.pkl'
-gdown.download(url, output, quiet=False)
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 st.header('Movie Recommender System')
