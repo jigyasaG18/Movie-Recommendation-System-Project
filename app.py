@@ -26,8 +26,7 @@ def recommend(movie):
     return recommended_movie_names, recommended_movie_posters
 
 def download_file_from_google_drive(file_id, destination):
-    file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'  # Updated file ID
-share_url = f'https://drive.google.com/file/d/{file_id}/view?usp=sharing'  # Construct the sharing URL
+    URL = f"https://drive.google.com/uc?id={file_id}"  # Updated URL format for direct download
     response = requests.get(URL)
     with open(destination, 'wb') as f:
         f.write(response.content)
@@ -72,6 +71,5 @@ if st.button('Show Recommendation'):
                 st.text("Poster not available")  
 
 # Google Drive URL construction for other purposes
-file_id = '1_UlR2lx89WlIdUjAgsdxXZo20QJ7WyqP'  # Updated file ID
-share_url = f'https://drive.google.com/file/d/{file_id}/view?usp=sharing'
+share_url = f'https://drive.google.com/file/d/{similarity_file_id}/view?usp=sharing'
 st.markdown(f"Access the file via this [Google Drive link]({share_url})")
